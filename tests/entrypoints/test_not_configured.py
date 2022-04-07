@@ -7,9 +7,11 @@ from thefuck.entrypoints.not_configured import main
 
 
 
-
-
-
+@pytest.fixture(autouse=True)
+def usage_tracker111(mocker):
+    return mocker.patch(
+        'thefuck.entrypoints.not_configured._get_not_configured_usage_tracker_path',
+        new_callable=MagicMock)
 
 @pytest.fixture(autouse=True)
 def usage_tracker(mocker):
