@@ -6,6 +6,11 @@ from thefuck.shells.generic import ShellConfiguration
 from thefuck.entrypoints.not_configured import main
 
 
+
+
+
+
+
 @pytest.fixture(autouse=True)
 def usage_tracker(mocker):
     return mocker.patch(
